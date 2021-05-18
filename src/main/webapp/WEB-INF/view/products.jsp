@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
 <html>
@@ -9,12 +10,10 @@
 <h1>Welcome page</h1>
 
 
-<c:forEach var="product" items="${products}">
-    <tr>
-        <td><c:out value="${product['id']}"/>
-        <td><c:out value="${product['title']}"/>
-        <td><c:out value="${product['cost']}"/>
-    </tr>
+<c:forEach var="product" items="${productsList}">
+    <td>${product.toString()}</td>
+    <td>${product.title}</td>
+    <td>${product.cost}</td>
 </c:forEach>
 
 <%--, ${name}.--%>

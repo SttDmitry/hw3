@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class ProductsRepository {
 
-    ArrayList<Product> products = new ArrayList<>(Arrays.asList(new Product(1, "item", 100),
+    List<Product> products = new ArrayList<>(Arrays.asList(new Product(1, "item", 100),
             new Product(2, "item2", 200),
             new Product(3, "item3", 300)));
 

@@ -15,14 +15,14 @@ public class ProductController {
     private ProductsService productsService;
 
     @Autowired
-    public void setStudentsService(ProductsService productsService) {
+    public void setProductsService(ProductsService productsService) {
         this.productsService = productsService;
     }
 
     @RequestMapping("/showAllProducts")
     public String showAllProducts(Model uiModel, @ModelAttribute("products") List<Product> products) {
         products = productsService.getProducts();
-        uiModel.addAttribute("products", products);
+        uiModel.addAttribute("productsList", products);
         return "products";
     }
 
