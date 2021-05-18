@@ -11,10 +11,13 @@
 
 
 <c:forEach var="product" items="${productsList}">
-    <td>${product.toString()}</td>
+<ul>
+    <td>${product.id}</td>
     <td>${product.title}</td>
     <td>${product.cost}</td>
+</ul>
 </c:forEach>
+
 
 <%--, ${name}.--%>
 

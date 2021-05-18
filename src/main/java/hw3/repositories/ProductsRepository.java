@@ -30,7 +30,7 @@ public class ProductsRepository {
 
     public boolean addProduct(int id, String title, int cost) {
         Product product = new Product(id, title, cost);
-        if (findOneById(id).equals(null)) {
+        if (findOneById(id) == null) {
             products.add(product);
             return true;
         }

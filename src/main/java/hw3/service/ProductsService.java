@@ -26,8 +26,8 @@ public class ProductsService {
         return productsRepository.listOfProducts();
     }
 
-    public void addProduct(int id, String title, int cost){
-        if (productsRepository.addProduct(id, title, cost)){
+    public void addProduct(Product product){
+        if (productsRepository.addProduct(product.getId(), product.getTitle(), product.getCost())){
             System.out.println("Product added!");
         }
     }

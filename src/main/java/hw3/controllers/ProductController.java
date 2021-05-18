@@ -20,9 +20,8 @@ public class ProductController {
     }
 
     @RequestMapping("/showAllProducts")
-    public String showAllProducts(Model uiModel, @ModelAttribute("products") List<Product> products) {
-        products = productsService.getProducts();
-        uiModel.addAttribute("productsList", products);
+    public String showAllProducts(Model uiModel) {
+        uiModel.addAttribute("productsList", productsService.getProducts());
         return "products";
     }
 
@@ -37,12 +36,13 @@ public class ProductController {
     public String showSimpleForm(Model uiModel) {
         Product product = new Product();
         uiModel.addAttribute("product", product);
+
         return "product-form";
     }
 
     @RequestMapping("/processForm")
     public String processForm(@ModelAttribute("product") Product product) {
-        productsService.addProduct(product.getId(),product.getTitle(),product.getCost());
+        productsService.addProduct(product);
         return "product-form-result";
     }
 
