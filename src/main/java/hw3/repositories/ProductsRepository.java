@@ -10,9 +10,7 @@ import java.util.List;
 @Component
 public class ProductsRepository {
 
-    List<Product> products = new ArrayList<>(Arrays.asList(new Product(1, "item", 100),
-            new Product(2, "item2", 200),
-            new Product(3, "item3", 300)));
+    List<Product> products = new ArrayList<>(Arrays.asList());
 
 
     public Product findOneById(int id) {
@@ -28,12 +26,16 @@ public class ProductsRepository {
         return products;
     }
 
-    public boolean addProduct(int id, String title, int cost) {
-        Product product = new Product(id, title, cost);
-        if (findOneById(id) == null) {
-            products.add(product);
-            return true;
-        }
-        return false;
+//    public boolean addProduct(int id, String title, int cost) {
+//        Product product = new Product(id, title, cost);
+//        if (findOneById(id) == null) {
+//            products.add(product);
+//            return true;
+//        }
+//        return false;
+//    }
+
+    public void addProductToList (Product product){
+        products.add(product);
     }
 }

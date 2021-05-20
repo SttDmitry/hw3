@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/product")
@@ -36,7 +35,6 @@ public class ProductController {
     public String showSimpleForm(Model uiModel) {
         Product product = new Product();
         uiModel.addAttribute("product", product);
-
         return "product-form";
     }
 

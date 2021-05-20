@@ -27,9 +27,10 @@ public class ProductsService {
     }
 
     public void addProduct(Product product){
-        if (productsRepository.addProduct(product.getId(), product.getTitle(), product.getCost())){
-            System.out.println("Product added!");
-        }
+//        if (productsRepository.addProduct(product.getId(), product.getTitle(), product.getCost())){
+//            System.out.println("Product added!");
+//        }
+        productsRepository.addProductToList(product);
     }
 
 
